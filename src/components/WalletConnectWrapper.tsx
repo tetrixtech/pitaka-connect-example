@@ -24,7 +24,7 @@ class WalletConnectWrapper extends React.Component<Props, State> {
 
   async componentDidMount() {
     const signClient = await SignClient.init({
-      projectId: "<YOUR PROJECT_ID>", // Get ProjectID from WalletConnect
+      projectId: "d3541dee612434b6498552f570478076", // Get ProjectID from WalletConnect
       metadata: {
         name: "Pitaka Connect Example",
         description: "Pitaka Connect Example",
@@ -98,9 +98,12 @@ class WalletConnectWrapper extends React.Component<Props, State> {
 
   render() {
     return (
-      <Button onClick={this.handleConnect} disabled={this.state.isConnecting}>
-        Connect Wallet
-      </Button>
+      <div>
+        <h3>Wallet Connect Standalone</h3>
+        <Button onClick={this.handleConnect} disabled={this.state.isConnecting}>
+          Connect Wallet
+        </Button>
+      </div>
     );
   }
 }

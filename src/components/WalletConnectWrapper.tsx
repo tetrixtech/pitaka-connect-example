@@ -1,6 +1,7 @@
 import React from "react";
 import SignClient from "@walletconnect/sign-client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
+import _ from "lodash";
 import Button from "./Button";
 
 interface Props {
@@ -78,9 +79,7 @@ class WalletConnectWrapper extends React.Component<Props, State> {
 
       // Open QRCode modal if a URI was returned (i.e. we're not connecting an existing pairing).
       if (uri) {
-        QRCodeModal.open(uri, () => {
-          console.log("EVENT", "QR Code Modal closed");
-        });
+        QRCodeModal.open(uri, _, { desktopLinks: []});
       }
 
       // Await session approval from the wallet.
